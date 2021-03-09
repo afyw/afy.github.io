@@ -28,7 +28,7 @@
 <meta property="og:description" content="线程主线程：执行主方法的线程 java程序属于抢占式调度，哪个线程的优先级高，哪个线程优先启动，同优先级随机选一个">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-03-09T11:09:36.000Z">
-<meta property="article:modified_time" content="2021-03-09T11:11:43.476Z">
+<meta property="article:modified_time" content="2021-03-09T13:38:36.878Z">
 <meta property="article:author" content="afy">
 <meta property="article:tag" content="Java">
 <meta name="twitter:card" content="summary">
@@ -200,7 +200,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2021-03-09 19:09:36 / Modified: 19:11:43" itemprop="dateCreated datePublished" datetime="2021-03-09T19:09:36+08:00">2021-03-09</time>
+              <time title="Created: 2021-03-09 19:09:36 / Modified: 21:38:36" itemprop="dateCreated datePublished" datetime="2021-03-09T19:09:36+08:00">2021-03-09</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -254,8 +254,12 @@
 <li><p>调用Thread类中的start方法，开启新的线程执行run方法</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Runnableimpl</span> <span class="keyword">implements</span> <span class="title">Runnable</span></span>&#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">10</span>; i++) &#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;下机&quot;</span> + i);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Demo02Runnable</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="comment">//创建Runnable接口的实现类对象</span></span><br><span class="line">        Runnableimpl run = <span class="keyword">new</span> Runnableimpl();</span><br><span class="line">        <span class="comment">//创建Thread类对象，构造方法中传递Runnable接口的实现类对象</span></span><br><span class="line">        Thread td = <span class="keyword">new</span> Thread(run);</span><br><span class="line">        <span class="comment">//调用start方法</span></span><br><span class="line">        td.start();</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">10</span>; i++) &#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;在下了&quot;</span> + i);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
-
 </li>
+</ol>
+<p><strong>实现Runnable接口创建多线程程序的好处：</strong></p>
+<ol>
+<li>避免了单继承的局限性，实现了Runnable接口，还可以继承其他的类，实现其他接口。</li>
+<li>增强了程序的扩展性，降低了程序的耦合性(解耦)</li>
 </ol>
 </li>
 </ul>
