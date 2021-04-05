@@ -29,7 +29,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="http://example.com/2021/04/05/Exception-in-thread-main-java-sql-SQLException-An-attempt-by-a-client-to-checkout-a-Connection-has-timed-out-%E9%97%AE%E9%A2%98/DataSource.png">
 <meta property="article:published_time" content="2021-04-05T09:55:17.000Z">
-<meta property="article:modified_time" content="2021-04-05T10:18:41.397Z">
+<meta property="article:modified_time" content="2021-04-05T10:20:43.175Z">
 <meta property="article:author" content="afy">
 <meta property="article:tag" content="Java">
 <meta name="twitter:card" content="summary">
@@ -202,7 +202,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2021-04-05 17:55:17 / Modified: 18:18:41" itemprop="dateCreated datePublished" datetime="2021-04-05T17:55:17+08:00">2021-04-05</time>
+              <time title="Created: 2021-04-05 17:55:17 / Modified: 18:20:43" itemprop="dateCreated datePublished" datetime="2021-04-05T17:55:17+08:00">2021-04-05</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -238,7 +238,7 @@
 <p><img src="/2021/04/05/Exception-in-thread-main-java-sql-SQLException-An-attempt-by-a-client-to-checkout-a-Connection-has-timed-out-%E9%97%AE%E9%A2%98/DataSource.png" alt="如图"></p>
 <p>通过google发现主要问题出在配置文件中（我的问题），检查以下几点：</p>
 <ol>
-<li>mysql6以后让MYSQL更安全需要在连接的URL中需要增加时区信息：<code>&lt;property name=&quot;jdbcUrl&quot;&gt;jdbc:mysql:///db4?serverTimezone=UTC&lt;/property&gt;</code></li>
+<li>mysql6以后为了让mysql更安全需要在连接的URL中需要增加时区信息：<code>&lt;property name=&quot;jdbcUrl&quot;&gt;jdbc:mysql:///db4?serverTimezone=UTC&lt;/property&gt;</code></li>
 <li>检查数据库相关信息是否填写正确，例如库密码</li>
 <li>最后是检查数据库服务是否开启</li>
 </ol>
